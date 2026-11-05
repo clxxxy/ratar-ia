@@ -1,0 +1,33 @@
+{
+  "name": "ratar-ia",
+  "version": "0.1.0",
+  "description": "Instale e atualize a skill RatarIA para pesquisa aprofundada com agentes de IA.",
+  "type": "module",
+  "bin": {
+    "rataria": "cli/rataria.mjs"
+  },
+  "files": [
+    "cli/",
+    "lib/",
+    "skills/rataria/",
+    ".claude-plugin/",
+    "scripts/distribution.mjs",
+    "DISTRIBUTION.md"
+  ],
+  "engines": { "node": ">=18.3.0" },
+  "scripts": {
+    "test": "node --test",
+    "check:distribution": "node scripts/distribution.mjs check",
+    "sync:version": "node scripts/distribution.mjs sync",
+    "version": "node scripts/distribution.mjs sync",
+    "prepack": "node scripts/distribution.mjs check --quiet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clxxxy/ratar-ia.git"
+  },
+  "homepage": "https://github.com/clxxxy/ratar-ia#readme",
+  "bugs": { "url": "https://github.com/clxxxy/ratar-ia/issues" },
+  "keywords": ["agent-skills", "deep-research", "copilot", "claude-code", "codex", "rataria"],
+  "license": "MIT"
+}

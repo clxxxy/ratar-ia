@@ -1,0 +1,10 @@
+{
+  "name": "rataria",
+  "version": "0.1.0",
+  "description": "Pesquisa aprofundada com fontes rastreaveis, acervo persistente e auditoria de cobertura.",
+  "author": { "name": "clxxxy" },
+  "homepage": "https://github.com/clxxxy/ratar-ia",
+  "repository": "https://github.com/clxxxy/ratar-ia",
+  "license": "MIT",
+  "keywords": ["research", "deep-research", "agent-skills", "rataria"]
+}

@@ -185,3 +185,61 @@ concorrência entre agentes de pesquisa, retomada automática do cliente, descob
 da skill em cada runtime ou compatibilidade executada no Node 18. O requisito
 18+ usa APIs padrão disponíveis nessa linha; a execução observada foi Node 24.
 Integridade mecânica não demonstra verdade, independência ou exaustividade.
+
+## 7. Instalador, pacote npm e plugin
+
+Data: 05/11/2026. Preparação local da distribuição 0.1.0, sem publicação,
+push, autenticação ou alteração de instalações pessoais.
+
+Comando executado: npm test. Resultado: 51 testes aprovados, zero falhas e
+zero ignorados: 26 do acervo, 21 do instalador e 4 da distribuição.
+
+Os testes novos usam arquivos reais em diretórios temporários. Verificam cópia
+de todos os recursos, hashes e versão, destinos por cliente/escopo, dry-run,
+recusa de instalações manuais, edições e exclusões locais, preservação de extras
+e pastas vazias, colisões de maiúsculas, junctions, traversal no recibo e trava.
+Uma revisão independente encontrou captura de pasta vazia durante update;
+o teste reproduziu a falha e o registro de posse de diretórios corrigiu o caso.
+
+Duas invocações reais do CLI foram iniciadas simultaneamente no mesmo destino:
+uma instalou e outra foi recusada, sem perda de recursos ou trava restante.
+Falhas de promoção e restauração foram injetadas somente na chamada renameSync,
+mantendo o restante do filesystem real. O primeiro caso restaurou o original;
+no segundo, o backup foi preservado e seu caminho informado. Esses testes não
+simulam queda de energia ou encerramento abrupto do processo.
+
+O teste de pacote executou npm pack offline, conferiu os recursos do tarball e
+usou npm exec offline para instalar/remover em outro projeto, com cache temporário.
+Não foi necessário um pacote publicado. O teste de sincronização alterou apenas
+uma cópia isolada e confirmou versão do plugin igual à do pacote.
+
+Plugin e catálogo foram aceitos pelo cliente oficial com os comandos:
+
+```sh
+claude plugin validate . --strict
+claude plugin validate .claude-plugin/plugin.json --strict
+```
+
+O catálogo inicialmente recebeu aviso de descrição ausente, corrigido antes da
+aprovação estrita. Não foi registrado marketplace nem instalado plugin no perfil.
+Não foi validada descoberta da skill em uma sessão nova de cada cliente.
+
+A execução observada foi Windows com Node.js v24.6.0. A CI para Windows/Linux
+e Node 18/22/24 foi configurada, não executada remotamente nesta entrega. As
+etapas externas, incluindo licença, nome e conta npm, estão descritas em
+[DISTRIBUTION.md](../DISTRIBUTION.md). Na preparação inicial, o pacote declarou
+UNLICENSED para não presumir uma licença aberta. Posteriormente, o responsável
+aprovou a MIT, aplicada ao pacote, ao plugin e ao arquivo de licença do projeto.
+
+## 8. Primeira publicação no npm
+
+Em 05/11/2026, a conta autenticada foi confirmada como clxxxy e os 51 testes
+foram repetidos com zero falhas. A primeira tentativa de publicação foi recusada
+por exigência de 2FA; após configuração pelo responsável, npm publish retornou
+código 0 e confirmou ratar-ia@0.1.0, tag latest e acesso público.
+
+O pacote enviado tem 17 arquivos e inclui a licença MIT. SHA-1 informado pelo
+npm: 54402466b3ec13867977d1ebcdbd6ba6bf84c965. A confirmação também informou
+processamento, e a primeira consulta pública ainda respondeu E404 para a versão.
+Aceitação do envio não foi confundida com disponibilidade pública ou instalação
+verificada. Não houve commit, push ou alteração de versão após o envio.

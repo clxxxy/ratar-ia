@@ -1,0 +1,12 @@
+{
+  "name": "clxxxy-rataria",
+  "description": "Skill RatarIA para pesquisa aprofundada e documentacao com evidencias.",
+  "owner": { "name": "clxxxy" },
+  "plugins": [
+    {
+      "name": "rataria",
+      "source": "./",
+      "description": "Pesquisa aprofundada e documentacao com evidencias e pendencias explicitas."
+    }
+  ]
+}

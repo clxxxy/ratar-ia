@@ -27,17 +27,44 @@ forneça o acervo anterior e diga o que deseja aprofundar ou atualizar.
 
 ## Instalação
 
-Copie a pasta [skills/rataria](skills/rataria/SKILL.md) inteira, incluindo seus
-recursos, para o diretório de skills do seu cliente:
+Escolha um canal por cliente para evitar instalações duplicadas.
 
-| Cliente | Destino no projeto |
-| --- | --- |
-| VS Code / Copilot | `.github/skills/rataria/` |
-| Clientes compatíveis com Agent Skills | `.agents/skills/rataria/` |
-| Claude Code | `.claude/skills/rataria/` |
+### Catálogo de skills
 
-O suporte depende do cliente. Recarregue a sessão se necessário e revise qualquer
-instalação existente antes de substituí-la.
+```sh
+npx skills add clxxxy/ratar-ia --skill rataria
+```
+
+O gerenciador permite escolher o cliente. Adicione `-g` para instalar no perfil
+pessoal e reutilizar entre projetos; confira os requisitos do gerenciador externo.
+
+### Plugin para Claude Code
+
+Após os manifests desta versão estarem disponíveis no GitHub, use no chat do Claude Code:
+
+```text
+/plugin install rataria --marketplace clxxxy/ratar-ia
+```
+
+### npm / npx
+
+Instale pelo npm (a primeira publicação pode levar alguns minutos para ficar disponível):
+
+```sh
+npx ratar-ia@latest install --client copilot --scope user
+```
+
+O instalador requer Node.js 18.3+. Clientes: `copilot`, `claude`, `codex` e `agents`.
+Use `--scope project` para instalar apenas no projeto atual ou `--dry-run` para simular.
+
+Também é possível executar o instalador na raiz deste repositório:
+
+```sh
+node cli/rataria.mjs install --client copilot --scope user
+```
+
+Recarregue o cliente após instalar. Veja [DISTRIBUTION.md](DISTRIBUTION.md) para
+atualizar, remover, fixar versões ou publicar. A publicação externa não é automática.
 
 ## Requisitos e limites
 
@@ -51,13 +78,18 @@ dentro dos limites definidos, sem prometer encontrar toda a informação existen
 
 ## Validação opcional
 
-Com Node.js 18+, sem instalar pacotes:
+Na raiz do repositório, sem instalar dependências:
 
 ```sh
-node --test tests/validar-acervo.test.mjs
+npm test
+npm run check:distribution
 node skills/rataria/scripts/validar-acervo.mjs caminho/acervo.json
 ```
 
 O validador verifica a estrutura e as referências do acervo, não a veracidade ou
 a completude da pesquisa. Os testes usam dados fictícios; detalhes em
 [tests/resultados.md](tests/resultados.md).
+
+## Licença
+
+[MIT](LICENSE).
