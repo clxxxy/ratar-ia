@@ -3,6 +3,10 @@
 Data: 04/11/2026. Evidência de aplicação textual em sessões de agentes, com
 fontes sintéticas. Nenhum ERP, site de exemplo, login ou operação real foi usado.
 
+As seções 1 a 5 preservam o registro da avaliação anterior à evolução coordenada.
+A seção 6 registra as verificações desta evolução; os resultados antigos não
+devem ser apresentados como reexecução da skill atual.
+
 ## 1. Método e limites
 
 Foram realizadas cinco amostras sem a skill, cinco com a primeira versão e cinco
@@ -90,3 +94,94 @@ Verificações locais previstas para a entrega:
 Não foi instalado um cliente adicional, não foi validada descoberta automática
 em cada runtime e não foi usado validador de publicação de catálogo corporativo.
 A revisão estrutural não substitui testes de aplicação nem enforcement técnico.
+
+## 6. Evolução para investigação coordenada
+
+Data: 04/11/2026. Implementação local, sem instalação em perfis pessoais,
+provedores de pesquisa ou clientes adicionais. Node.js observado: v24.6.0.
+
+### Controle e aplicações textuais
+
+Uma amostra sem a skill recebeu pacote com API paginada, PDF ausente, SPA sem
+corpo, blogs duplicados, homônimo e pressão por "100% completo". Preservou as
+cautelas e entregou síntese/retomada em prosa. Não houve falha geral de segurança;
+a diferença observada foi a ausência de contrato estruturado de persistência.
+O controle proibia escrita, portanto não mede capacidade de salvar arquivos.
+
+Duas amostras intermediárias com a skill produziram JSON, mas revelaram problemas
+de forma: rodada numérica onde o contrato espera texto e consulta transversal
+sem vínculo explícito aos demais tópicos. A segunda recuperou os 12 fatos do
+oráculo fechado na leitura manual. As instruções passaram a explicitar round
+textual, topic_ids para leitura transversal e afirmações atômicas.
+
+Uma aplicação posterior gerou arquivos a partir da fixture, sem ler o oráculo:
+[relatório](fixtures/atlas-relatorio.md) e [acervo](fixtures/atlas-acervo.json).
+Os 12 fatos esperados constam da entrega, incluindo cursor, UTF-8, retenção,
+permissões, Enterprise, Pix beta, incidente histórico e limite do arquivo v1.
+Portal bloqueado, homônimo e origem dos blogs permaneceram explícitos.
+
+A primeira validação desse arquivo rejeitou dois pontos: C25 apoiada em fonte
+bloqueada apesar de descrever aviso fornecido, e audit.findings com objetos em
+vez de textos. O coordenador vinculou E24/E25 à fixture efetivamente lida e
+preservou detalhes em finding_details, mantendo findings textual. O acervo
+publicado é o artefato reparado, não evidência de conformidade sem intervenção.
+As regras correspondentes foram explicitadas no contrato.
+
+Após esses reparos, o validador contou 19 registros de fontes locais (18 lidos,
+1 não lido), 40 evidências, 48 afirmações, 15 tópicos (14 cobertos no recorte
+textual e 1 bloqueado) e 1 pendência aberta. Fontes são registros do pacote e de
+suas subseções, não 18 páginas web visitadas ou fontes independentes.
+
+### Retomada em contexto novo
+
+Outra amostra leu apenas skill/contrato e checkpoint, recebendo a atualização
+sintética da cota Pro para 12 usuários em 05/11/2026. Gerou o
+[delta](fixtures/atlas-delta.json): C49 com supersedes C15, nova evidência e nova
+consulta, sem apagar C15/E14 nem resolver falsamente F10. A data 05/11 pertence
+à simulação futura, não a uma consulta web realizada nesse dia.
+
+O delta foi aplicado em memória a uma cópia temporária e validado: 20 fontes,
+41 evidências, 49 afirmações, 2 consultas e a mesma pendência. O checkpoint
+original permaneceu intacto. A suíte reproduz a combinação e confere a
+preservação de C15/E14, o vínculo supersedes e F10 bloqueado.
+
+### Revisão independente e regressões
+
+Um agente revisor, somente leitura, encontrou quatro classes de defeito:
+encerramento parcial sem ferramenta/falha rejeitado; rotas SPA colapsadas ao
+remover fragmentos; resultado de pista concluída sem referências verificadas;
+campos anuláveis obrigatórios ausentes aceitos. Esses casos viraram testes que
+falharam antes do reparo e passaram depois. Não foi alegada execução pelo revisor.
+
+O ciclo inicial tinha 12 testes: todos falharam sem o script, 11 passaram na
+primeira implementação e 12 após corrigir acúmulo de erros. As ampliações
+expuseram outros defeitos antes de seus reparos. A suíte final tem 26 testes,
+incluindo auditoria malformada em entrega que declara conclusão.
+
+Comando executado, com 26 aprovados e zero falhas:
+
+```sh
+node --test tests/validar-acervo.test.mjs
+```
+
+O exemplo distribuído e o acervo produzido também foram aceitos pelo script real.
+Os testes cobrem referências, IDs, estados, datas, ciclos, grupos de origem
+declarados, paginação, rastreamento, rotas SPA, saturação antiga, falta de
+ferramentas, tipos malformados, erros de entrada, checkpoint e delta.
+
+Verificação local adicional: 34 links Markdown relativos apontavam para arquivos
+existentes e os quatro arquivos JSON foram lidos por JSON.parse sem erro. Isso
+não valida âncoras de conteúdo ou URLs externas.
+
+### Limites da evidência
+
+As amostras de aplicação são observações pequenas, não benchmark A/B controlado
+nem repetição estatística; houve mudanças de instrução, orçamento de saída e
+intervenção manual. O acerto de 12/12 se refere somente ao oráculo sintético e
+foi conferido manualmente, não por classificador de palavras-chave.
+
+Não foram testados navegação web real, OCR real, navegador renderizando a SPA,
+concorrência entre agentes de pesquisa, retomada automática do cliente, descoberta
+da skill em cada runtime ou compatibilidade executada no Node 18. O requisito
+18+ usa APIs padrão disponíveis nessa linha; a execução observada foi Node 24.
+Integridade mecânica não demonstra verdade, independência ou exaustividade.

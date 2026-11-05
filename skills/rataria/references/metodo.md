@@ -6,6 +6,11 @@ Comece pela pergunta e pelo uso do resultado. Estudar uma ferramenta para
 integrá-la não é o mesmo que comparar fornecedores ou explicar seu funcionamento.
 Não transforme o pedido em implementação, diagnóstico de produção ou compra.
 
+Escolha explicitamente entre acervo e decisão. No acervo, inventarie todas as
+dimensões pertinentes, inclusive recursos sem impacto decisório imediato. No
+modo decisão, priorize as perguntas decisórias sem apagar pistas não examinadas.
+Nunca reduza silenciosamente um pedido de acervo a um resumo executivo.
+
 Consulte primeiro documentos e instruções fornecidos. Diferencie o estado
 relatado pelo usuário de observações verificadas. Registre limites de tempo,
 quantidade de buscas, acesso e formato. Se não houver orçamento explícito,
@@ -16,10 +21,10 @@ Matriz de cobertura mínima:
 
 | Coluna | O que registrar |
 | --- | --- |
-| Tópico/pergunta | A questão que pode mudar a decisão |
+| Tópico/pergunta | Dimensão do objeto ou questão decisória, conforme o modo |
 | Prioridade | Essencial, complementar ou fora do recorte |
 | Fonte esperada | Contrato, órgão público, especificação, estudo, manual ou relato |
-| Estado | Não explorado, coberto, contraditório ou bloqueado |
+| Estado | Não explorado, parcial, coberto, contraditório, bloqueado, não localizado ou não aplicável |
 | Evidência/lacuna | Fonte que responde ou informação que continua faltando |
 
 Adapte ao tema. Em software, considere autenticação, contratos, limites, erros,
@@ -32,8 +37,10 @@ fontes primárias e revisão profissional quando aplicável.
 
 Primeiro encontre índices, coleções e fontes primárias. Depois siga referências
 dos pontos prioritários: versões, notas de atualização, requisitos, restrições,
-casos-limite e mecanismos de recuperação. Só aprofunde um ramo se ele responder
-à pergunta ou revelar uma dependência importante.
+casos-limite e mecanismos de recuperação. Em modo decisão, aprofunde ramos que
+respondem à pergunta ou revelam dependências importantes. Em modo acervo, percorra
+também os ramos secundários pertinentes; orçamento insuficiente gera pendência,
+não descarte silencioso. Use o mapa de superfícies e a fila do protocolo de descoberta.
 
 Complemente com perspectivas independentes. Material comercial, tutorial e
 review têm funções diferentes. Avaliação não verificada não confirma defeito;
@@ -44,6 +51,10 @@ republicando uma fonte não são confirmação independente.
 Use ferramentas disponíveis; não exija uma marca de buscador ou navegador.
 Sem web, analise os anexos e declare que a atualização externa não foi realizada.
 Trabalhe com requisições limitadas e evite coletas massivas irrelevantes.
+
+Distribua frentes conforme o protocolo de coordenação. Não confunda vários
+agentes repetindo as mesmas buscas com cobertura independente. Se não houver
+subagentes autorizados, percorra as frentes sequencialmente.
 
 ## 3. Registro de fontes e afirmações
 
@@ -60,6 +71,10 @@ Para cada achado importante: conclusão, classe de evidência, fontes, localiza�
 do trecho, limite e implicação. Uma seção de fontes no fim não basta se o leitor
 não consegue saber qual fonte sustenta qual afirmação. Não é necessário copiar
 longos trechos; use âncora, seção, página ou breve paráfrase localizada.
+
+Persista esses vínculos no contrato do acervo após cada lote. Um resumo recebido
+é uma fonte fornecida: não marque a página original como lida. Cada descoberta
+pendente conserva origem, tópico e próxima ação; preservar apenas a síntese não basta.
 
 | Classe | Significado | Exemplo de redação |
 | --- | --- | --- |
@@ -116,6 +131,11 @@ Para pesquisa extensa, divida por assunto e mantenha registro de fontes e
 matriz de cobertura. Evite uma coleção de links sem síntese ou um texto enorme
 sem rastreabilidade. Não reescreva documentação existente sem necessidade.
 
+Mantenha síntese e acervo separados: índice, capítulos, inventário de recursos,
+limites, histórico, fontes, fila e auditoria. Não descarte evidência localizada
+apenas porque não coube no resumo. Ao atualizar, preserve IDs e checkpoint anterior,
+revalide informações voláteis e marque conclusões superadas sem apagá-las.
+
 No destino, respeite anonimização, confidencialidade e direitos autorais.
 Não transportar automaticamente restrições específicas de um projeto para todos
 os temas. Exemplo: preços públicos podem ser pertinentes a uma comparação;
@@ -129,10 +149,20 @@ Verifique URLs de documentação quando seguro. HTTP 200 não valida conteúdo,
 fragmentos ou conclusão; 403 pode ser bloqueio de acesso, não ausência da página.
 Não contorne o bloqueio para obter uma marca de link validado.
 
-Critério normal: todos os tópicos essenciais têm fonte adequada ou lacuna
-explícita, contradições materiais estão resolvidas ou descritas e duas rodadas
-consecutivas de buscas direcionadas não trouxeram evidência relevante nova.
-Uma rodada é um conjunto coerente de consultas de uma pergunta, não cada clique.
+Audite inventário, fila e capítulos antes do encerramento, preferindo revisor
+independente quando disponível e autorizado. Sem ele, identifique segunda passagem
+sequencial. Defeitos reabrem a coleta dentro do orçamento; no limite, ficam explícitos.
+
+Encerre por frente: universo finito efetivamente percorrido ou duas rodadas
+consecutivas executadas sem evidência nova, usando caminhos diversificados
+pertinentes. Uma rodada é um conjunto coerente de consultas de uma pergunta, não
+cada clique. Repetir a mesma consulta não prova saturação. Falha de ferramenta
+também não. Registre consultas, novas evidências e motivo de parada por tópico.
+
+Uma entrega concluída no recorte exige tópicos cobertos ou justificadamente não
+aplicáveis, fila sem pendências e auditoria sem achados abertos. Lacuna explícita
+é transparência, não cobertura. Conte páginas/fontes examinadas sobre o universo
+descoberto conhecido; não converta esse denominador em percentual de toda a informação.
 
 Prazo, orçamento, falta de ferramentas ou acesso podem encerrar antes da
 saturação. Marque entrega parcial, cobertura, tentativas, bloqueios, o que falta

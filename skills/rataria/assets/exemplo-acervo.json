@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "manifest": {
+    "run_id": "exemplo-sintetico-20261104",
+    "target": {
+      "name": "Atlas",
+      "organization": "Oficina ficticia",
+      "edition": "Cloud",
+      "version": "nao informado",
+      "region": "BR",
+      "aliases": [],
+      "excluded": ["Atlas CRM de outra empresa"]
+    },
+    "objective": "acervo",
+    "status": "parcial",
+    "started_at": "2026-11-04",
+    "updated_at": "2026-11-04",
+    "budget": { "limit": "Um pacote textual fornecido", "used": "Uma analise textual; sem medicao de custo" },
+    "tools": { "search": false, "browser": false, "subagents": false, "persistence": true },
+    "stop_reason": "sem_ferramentas",
+    "report_files": [],
+    "material_mode": "sintetico",
+    "note": "Exemplo de contrato, nao registro de pesquisa executada. URLs reservadas: nao navegar."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "file": "mensagem:pacote-sintetico",
+      "title": "Resumo ficticio fornecido para demonstrar o contrato",
+      "origin": "Fixture sintetica",
+      "type": "material-fornecido",
+      "published_at": null,
+      "accessed_at": "2026-11-04",
+      "access": "lida",
+      "derived_from": null
+    },
+    {
+      "id": "S2",
+      "url": "https://example.invalid/limits.pdf",
+      "title": "Limites, apenas mencionado no pacote",
+      "origin": "Oficina ficticia",
+      "type": "pdf",
+      "published_at": null,
+      "accessed_at": "2026-11-04",
+      "access": "catalogada",
+      "derived_from": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "source_id": "S1",
+      "locator": "Resumo: exportacao",
+      "text": "O resumo fornecido informa exportacao CSV e menciona um PDF de limites nao extraido.",
+      "kind": "parafrase",
+      "collected_at": "2026-11-04"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "O resumo sintetico fornecido informa exportacao CSV.",
+      "class": "documentado",
+      "evidence_ids": ["E1"],
+      "topic_ids": ["T1"],
+      "limitations": "Fonte indireta; nao comprova contrato vigente nem funcionamento."
+    }
+  ],
+  "frontier": [
+    {
+      "id": "F1",
+      "question": "Obter e examinar notas do PDF de limites",
+      "url": "https://example.invalid/limits.pdf",
+      "source_ids": ["S1", "S2"],
+      "topic_id": "T2",
+      "status": "pendente",
+      "reason": "PDF apenas mencionado; nenhuma extracao executada.",
+      "depends_on": [],
+      "assigned_to": "coordenador-sequencial"
+    }
+  ],
+  "queries": [
+    {
+      "id": "Q1",
+      "topic_id": "T1",
+      "query": "Analise textual do resumo sintetico fornecido",
+      "tool": "leitura-do-contexto",
+      "status": "executada",
+      "executed_at": "2026-11-04",
+      "source_ids": ["S1"],
+      "new_evidence_ids": ["E1"],
+      "round": "R1"
+    }
+  ],
+  "coverage": [
+    { "id": "T1", "label": "Exportacao CSV", "essential": true, "status": "parcial", "source_ids": ["S1"], "gap": "Apenas resumo fornecido; documento original nao examinado.", "closure": null },
+    { "id": "T2", "label": "Limites em PDF", "essential": true, "status": "nao_explorado", "source_ids": ["S2"], "gap": "Arquivo nao fornecido.", "closure": null }
+  ],
+  "audit": {
+    "status": "pendente",
+    "reviewed_by": null,
+    "findings": ["Sem leitura do original ou do PDF; sem auditoria independente."]
+  }
+}

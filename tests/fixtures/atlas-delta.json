@@ -1,0 +1,69 @@
+{
+  "base_run_id": "atlas-sintetico-20261104-r1",
+  "run_id": "atlas-sintetico-20261105-r2",
+  "date": "2026-11-05",
+  "sources": [
+    {
+      "id": "S19",
+      "file": "mensagem:atualizacao-sintetica-20261105",
+      "title": "Atualizacao sintetica fornecida: cota Pro Cloud BR",
+      "origin": "Mensagem do usuario nesta retomada; material sintetico fornecido, nao coletado da web",
+      "type": "atualizacao-sintetica-fornecida",
+      "published_at": null,
+      "accessed_at": "2026-11-05",
+      "access": "lida",
+      "derived_from": null,
+      "locator": "userRequest, trecho entre aspas apos 'unica nova evidencia'",
+      "limitations": "Somente o trecho fornecido no prompt foi lido como evidencia nova. A data de vigencia nao e data de publicacao. Nenhuma tabela externa, URL, conta ou contrato foi consultado."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E41",
+      "source_id": "S19",
+      "locator": "userRequest, trecho entre aspas apos 'unica nova evidencia'",
+      "text": "Nova tabela Cloud BR: Pro ate 12 usuarios. Vigente a partir de 05/11/2026. O registro anterior dizia 10 usuarios.",
+      "kind": "citacao",
+      "collected_at": "2026-11-05"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C49",
+      "text": "A atualizacao sintetica fornecida informa cota de ate 12 usuarios no plano Pro do Atlas Cloud BR da Oficina, versao alvo 2026 preservada do checkpoint, vigente a partir de 2026-11-05.",
+      "class": "documentado",
+      "evidence_ids": ["E41"],
+      "topic_ids": ["T06"],
+      "limitations": "Identidade mantida por instrucao do usuario para o mesmo produto e edicao; a mensagem nova nao revalida identidade ou versao externamente. Cota e vigencia sustentadas apenas pelo texto sintetico fornecido, sem verificacao comercial, contratual ou operacional. Nao altera precos, outras cotas, permissoes ou elegibilidade de recursos. C15 e sua evidencia E14 permanecem no checkpoint como historico; nao aplicar a nova cota a periodos anteriores a 2026-11-05.",
+      "supersedes": "C15",
+      "effective_from": "2026-11-05"
+    }
+  ],
+  "queries": [
+    {
+      "id": "Q02",
+      "topic_id": "T06",
+      "query": "Leitura do trecho de atualizacao sintetica fornecido no prompt desta rodada, unica evidencia nova autorizada; confronto com C15/E14 no checkpoint lido com functions.read_file. Nenhuma fonte original ou externa foi relida.",
+      "tool": "leitura_do_prompt",
+      "status": "executada",
+      "executed_at": "2026-11-05",
+      "source_ids": ["S19"],
+      "new_evidence_ids": ["E41"],
+      "round": "R2"
+    }
+  ],
+  "remaining_frontier_ids": ["F10"],
+  "revalidation_notes": [
+    "Retomada limitada a uma rodada sintetica em 2026-11-05, data autorizada pelo usuario. Mantido o alvo do checkpoint: Atlas, Oficina, Cloud, versao 2026, BR. Nenhuma revalidacao externa de identidade, edicao ou versao foi realizada.",
+    "Somente a cota Pro de T06 recebe evidencia nova: C49/E41/S19 substitui C15 como referencia a partir de 2026-11-05. Preservar C15/E14/S06 integralmente como historico. Este delta e aditivo; nao reescreve frontier, coverage, manifest ou auditoria do checkpoint. A nota antiga de T06 e o resultado antigo de F06 descrevem a rodada base, nao uma revalidacao em 2026-11-05.",
+    "T06/C16: precos, valores comerciais e demais condicoes de planos nao foram revalidados e continuam sem valores fornecidos. Nao inferir gratuidade nem aplicar a nova cota a outros planos, edicoes ou regioes.",
+    "T05/C13: retencao de backups de 30 dias e demais limites do anexo nao foram revalidados; permanecem informacoes documentais da rodada base, sem inspecao do PDF original ou confirmacao de vigencia atual.",
+    "T03/C06/C14/C32 e T04/C08/C09/C10/C11: disponibilidade de CSV, codificacao, operacoes API e paginacao nao foram revalidadas. Nenhuma exportacao, endpoint ou contrato de resposta foi testado.",
+    "T07/C17/C18 e T09/C22: permissoes por perfil e exclusividade Enterprise para logs de auditoria nao foram revalidadas. A nova cota Pro nao sustenta alteracao dessas regras nem acesso a logs.",
+    "T08/C19/C20/C21: estado beta, elegibilidade e disponibilidade do Pix nao foram revalidados; nenhuma nova conclusao sobre disponibilidade geral ou Desktop.",
+    "T11/C26/C27/C28/C29: incidente de 2026-10-28 preservado como historico; disponibilidade atual, novos incidentes e SLA nao foram consultados nem confirmados.",
+    "T12/C30/C31: autenticacao atual, suporte de versoes e operacao da API v1 nao foram revalidados. App Key permanece descricao do arquivo historico de 2024, nao autenticacao confirmada para 2026.",
+    "F10/T10/C24 e achado A01 permanecem abertos: login e contrato continuam indisponiveis conforme o pedido atual. Nenhuma tentativa de autenticacao ou acesso ao portal ocorreu; nenhum novo conteudo contratual foi fornecido. Manter a pesquisa parcial por bloqueio, sem declarar conclusao do acervo.",
+    "Nenhum outro assunto recebe evidencia nova ou confirmacao de vigencia. Leitura restrita a SKILL.md, references/acervo.md e atlas-acervo.json, alem do prompt atual. Sem relatorio, fixture original, cenarios, resultados, outras fontes de pesquisa, rede, terminal, autenticacao ou delegacao. Checkpoint nao modificado; somente este delta foi criado. Validador nao executado; horario, duracao e custo nao medidos nem inventados."
+  ]
+}
