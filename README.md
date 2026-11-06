@@ -1,5 +1,9 @@
 <p align="center">
-	<img src="https://github.com/user-attachments/assets/1fda9566-c25f-4248-a8d1-3353a2e4a90d" alt="Logo RatarIA" width="240" />
+	<picture>
+		<source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/1fda9566-c25f-4248-a8d1-3353a2e4a90d" />
+		<source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/bd65e716-f177-4cda-a8e1-a0f9874dbddc" />
+		<img src="https://github.com/user-attachments/assets/bd65e716-f177-4cda-a8e1-a0f9874dbddc" alt="Logo RatarIA" width="240" />
+	</picture>
 </p>
 
 <h1 align="center">RatarIA</h1>
