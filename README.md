@@ -1,7 +1,13 @@
-# RatarIA
+<p align="center">
+	<img src="https://github.com/user-attachments/assets/bed66731-bf54-4d35-b463-ff5bbf52b494" alt="Logo RatarIA" width="240" />
+</p>
 
-Uma skill para agentes de IA pesquisarem aplicações, sites, features e produtos
-em profundidade, organizando os achados com fontes e deixando claro o que falta verificar.
+<h1 align="center">RatarIA</h1>
+
+<p align="center">
+	Uma skill para agentes de IA pesquisarem aplicações, sites, features e produtos
+	em profundidade, organizando os achados com fontes e deixando claro o que falta verificar.
+</p>
 
 ## O que faz
 
