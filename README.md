@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://github.com/user-attachments/assets/bed66731-bf54-4d35-b463-ff5bbf52b494" alt="Logo RatarIA" width="240" />
+	<img src="https://github.com/user-attachments/assets/1fda9566-c25f-4248-a8d1-3353a2e4a90d" alt="Logo RatarIA" width="240" />
 </p>
 
 <h1 align="center">RatarIA</h1>
